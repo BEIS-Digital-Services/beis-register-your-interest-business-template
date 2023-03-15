@@ -1,0 +1,25 @@
+﻿@model TitleOrRoleViewModel
+@{
+  ViewData["Title"] = "What is your job title or role in the business?";
+}
+
+<nav class="govuk-!-margin-bottom-9">
+  <a class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-0" href="/applicant">Back</a>
+</nav>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+        <form class="form" asp-route="@RouteNames.ApplicantRolePage" method="post">
+        <div class="govuk-form-group" highlight-error-for="BusinessRole" error-class="govuk-form-group--error">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" asp-for="@Model.BusinessRole">
+              What is your job title or role in the business?
+            </label>
+          </h1>
+          <div id="business-role-hint" class="govuk-hint">Enter your job title or role.</div>
+          <span asp-validation-for="BusinessRole" class="govuk-error-message"></span>
+          <input asp-for="@Model.BusinessRole" class="govuk-input" type="text" aria-describedby="business-role-hint" />
+        </div>
+        <button ga-data-action-id="btn-sme-work-business-role" class="govuk-button business-role" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>

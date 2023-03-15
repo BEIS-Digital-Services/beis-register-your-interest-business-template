@@ -1,0 +1,27 @@
+@model CompaniesHouseNumberViewModel;
+@{
+    ViewData["Title"] = "Enter the Companies House number";
+    var verticalErrorStyle = !ViewData.ModelState.IsValid ? "govuk-form-group--error" : string.Empty;
+}
+@section BackLink {
+    <a asp-route="@RouteNames.HasCompaniesHousePage" class="govuk-back-link">Back</a>
+}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" asp-route="@RouteNames.CompaniesHouseNumberPage" method="post">
+        <div class="govuk-form-group @verticalErrorStyle">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" asp-for="Number">
+              What is the Companies House number?
+            </label>
+          </h1>
+          <p class="govuk-body">You can find the Companies House number on the certificate of incorporation. You can also <a href="https://find-and-update.company-information.service.gov.uk" class="govuk-link" target="_blank">search the Companies House register (opens in new tab)</a>.</p>
+          <div id="co-number-hint" class="govuk-hint">For example, 12345678</div>
+          <span asp-validation-for="Number" class="govuk-error-message"></span>
+          <input asp-for="Number" class="govuk-input" type="text" maxlength="9" aria-describedby="co-number-hint">
+        </div>
+        <button ga-data-action-id="btn-sme-companyhouse-number-continue" class="govuk-button company-house-number" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>

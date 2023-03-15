@@ -1,0 +1,43 @@
+@model CompaniesHouseViewModel;
+@{
+    ViewData["Title"] = "Does the business have a Companies House number?";
+    var verticalErrorStyle = !ViewData.ModelState.IsValid ? "govuk-form-group--error" : string.Empty;
+}
+
+@section BackLink {
+    <a asp-route="@RouteNames.HomePage" class="govuk-back-link">Back</a>
+}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" asp-route="@RouteNames.HasCompaniesHousePage" method="post">
+        <div class="govuk-form-group @verticalErrorStyle">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Does the business have a Companies House number?
+              </h1>
+            </legend>
+            <p class="govuk-body">This is also known as a company registration number.</p>
+            <p class="govuk-body">You can find the Companies House number on the certificate of incorporation. You can also <a href="https://find-and-update.company-information.service.gov.uk" class="govuk-link" target="_blank">search the Companies House register  (opens in new tab)</a>.</p>
+            <span asp-validation-for="HasCompaniesHouseNumber" id="hasCompanyNumber" class="govuk-error-message"></span>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input asp-for="HasCompaniesHouseNumber" class="govuk-radios__input" id="companyNumber-yes" name="hasCompaniesHouseNumber" type="radio" value="true">
+                <label class="govuk-label govuk-radios__label" for="companyNumber-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input asp-for="HasCompaniesHouseNumber" class="govuk-radios__input" id="companyNumber-no" name="hasCompaniesHouseNumber" type="radio" value="false">
+                <label class="govuk-label govuk-radios__label" for="companyNumber-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button ga-data-action-id="btn-sme-company-house-continue" class="govuk-button company-house" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,32 @@
+﻿
+
+@{
+    ViewData["Title"] = WebsiteConstnats.ProgramName;
+}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Welcome to the @WebsiteConstnats.ProgramName website.</h1>
+        <p class="govuk-body-l">If you would like to register your interest in the program, read the following details and follow the steps to provide us with your details.</p>
+
+        <h2 class="govuk-heading-m">About the program</h2>
+        <p class="govuk-body">In order to register your interest in this program you will need to provide us with:</p>
+        <ol class="govuk-list govuk-list--number">
+            <li>Your companies house or fincancial conduct authority details.</li>
+            <li>Your name.</li>
+            <li>Your business role or job title.</li>            
+            <li>Your email address.</a></li>
+            <li>Your phone number.</li>
+        </ol>
+
+
+        <a role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button" asp-route="@RouteNames.HasCompaniesHousePage">
+            Register your interest
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" data-darkreader-inline-fill="" style="--darkreader-inline-fill:currentColor;"></path>
+            </svg>
+        </a>
+
+    </div>
+    
+</div>
+

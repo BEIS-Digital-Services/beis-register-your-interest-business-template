@@ -1,0 +1,26 @@
+@model Beis.RegisterYourInterest.Models.FcaNumberViewModel
+@{
+    ViewData["Title"] = "What is the Financial Conduct Authority number?";
+}
+
+@section BackLink {
+    <a asp-route="@RouteNames.HasFcaNumberPage" class="govuk-back-link">Back</a>
+}
+  
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">        
+        <form class="form" asp-route="@RouteNames.FcaNumberPage" method="post">
+          <div class="govuk-form-group"  highlight-error-for="FCAFullRegistrationNumber" error-class="govuk-form-group--error">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" asp-for="FCAFullRegistrationNumber">
+                What is the Financial Conduct Authority number?
+              </label>
+            </h1>
+            <div id="fca-number-hint" class="govuk-hint">For example, SP450735</div>
+            <span asp-validation-for="FCAFullRegistrationNumber" class="govuk-error-message"></span>
+            <input asp-for="FCAFullRegistrationNumber" class="govuk-input" type="text" aria-describedby="fca-number-hint">
+          </div>
+          <button ga-data-action-id="btn-sme-fca-registration-number-continue" class="govuk-button fca-number" data-module="govuk-button">Continue</button>
+        </form>
+      </div>
+    </div>

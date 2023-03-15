@@ -1,0 +1,43 @@
+@model Beis.RegisterYourInterest.Models.HasFcaNumberViewModel;
+@{
+    ViewData["Title"] = "Does the business have a Financial Conduct Authority number?";
+}
+
+@section BackLink {
+    <a asp-route="@RouteNames.HomePage" class="govuk-back-link">Back</a>
+}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">            
+            <form class="form" asp-route="@RouteNames.HasFcaNumberPage">
+                <div class="govuk-form-group" highlight-error-for="HasFCANumber" error-class="govuk-form-group--error">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                Does the business have a Financial Conduct Authority number?
+                            </h1>
+                        </legend>
+                        <p class="govuk-body">
+                            The Mutuals Public Register is a public record of mutual societies registered by the Financial Conduct Authority. You can find this number on the <a href="https://mutuals.fca.org.uk/" target="_blank">Financial Conduct Authority Mutuals Public Register (opens in new tab)</a>.
+                        </p>
+                        <span asp-validation-for="HasFcaNumber" id="hasFCANumber" class="govuk-error-message"></span>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input asp-for="HasFcaNumber" class="govuk-radios__input" id="hasfcanumber-yes" type="radio" value="true">
+                                <label class="govuk-label govuk-radios__label" for="hasfcanumber-yes">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input asp-for="HasFcaNumber" class="govuk-radios__input" id="hasfcanumber-no" type="radio" value="false">
+                                <label class="govuk-label govuk-radios__label" for="hasfcanumber-no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <button ga-data-action-id="btn-sme-fca-number-continue" class="govuk-button" data-module="govuk-button">Continue</button>
+            </form>
+        </div>
+    </div>
