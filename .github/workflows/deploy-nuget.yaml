@@ -23,8 +23,8 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Create output directory
-        run: mkdir Beis.RegisterYourInterest/out
+      #- name: Create output directory
+      #  run: mkdir Beis.RegisterYourInterest/out
 
       - name: Build solution and generate NuGet package
         run: |  
