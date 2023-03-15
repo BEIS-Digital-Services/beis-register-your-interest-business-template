@@ -32,8 +32,7 @@ jobs:
           cd ${{env.PROJECT_NAME}}
           dotnet pack -c Release -o out  
           ls
-          ls Beis.RegisterYourInterest
-          ls Beis.RegisterYourInterest/out/
+          ls out/
 
       - name: Push generated package to GitHub registry
         run:
