@@ -6,6 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>5d17c982-3b2d-436d-8160-0348a7e287c5</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<IsPackable>True</IsPackable>
   </PropertyGroup>
 
 	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
