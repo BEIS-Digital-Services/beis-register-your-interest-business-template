@@ -21,3 +21,6 @@ dotnet new uninstall E:\Repos\beis-visual-studio-templates\Beis.RegisterYourInte
 dotnet new install E:\Repos\beis-visual-studio-templates\Beis.RegisterYourInterest
 dotnet new --debug:rebuildcache
 dotnet new --list
+
+to install from a public package :
+dotnet new install Beis.RegisterYourInterest
