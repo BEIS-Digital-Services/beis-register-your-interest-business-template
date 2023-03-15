@@ -22,9 +22,10 @@ jobs:
         uses: actions/setup-dotnet@v1      
         with:
           dotnet-version: 6.0.x
-
-      #- name: Create output directory
-      #  run: mkdir Beis.RegisterYourInterest/out
+      - name: Create output directory
+        run: |
+         mkdir -p Beis.RegisterYourInterest
+         mkdir Beis.RegisterYourInterest/out
 
       - name: Build solution and generate NuGet package
         run: |  
