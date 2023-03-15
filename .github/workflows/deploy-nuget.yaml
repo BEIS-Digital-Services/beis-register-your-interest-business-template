@@ -22,15 +22,17 @@ jobs:
         uses: actions/setup-dotnet@v1      
         with:
           dotnet-version: 6.0.x
-      - name: Create output directory
-        run: |
-         mkdir -p Beis.RegisterYourInterest
-         mkdir Beis.RegisterYourInterest/out
+      #- name: Create output directory
+      #  run: |
+      #   mkdir -p Beis.RegisterYourInterest
+      #   mkdir Beis.RegisterYourInterest/out
 
       - name: Build solution and generate NuGet package
         run: |  
           cd ${{env.PROJECT_NAME}}
           dotnet pack -c Release -o out  
+          ls
+          ls Beis.RegisterYourInterest
           ls Beis.RegisterYourInterest/out/
 
       - name: Push generated package to GitHub registry
