@@ -31,4 +31,5 @@ jobs:
 
       - name: Push generated package to GitHub registry
         run:
-         dotnet nuget push ${{env.PROJECT_NAME}}/out/*.nupkg   --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.BEIS_GITHUB_TOKEN}}
+         cd ${{env.PROJECT_NAME}}
+           dotnet nuget push ${{env.PROJECT_NAME}}/out/*.nupkg   --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.BEIS_GITHUB_TOKEN}}
