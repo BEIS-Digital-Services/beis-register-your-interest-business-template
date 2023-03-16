@@ -1,6 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "BEIS",
+  "description": "BEIS Register Your Interest Business Template",
   "classifications": [ "Web" ],
   "name": "Beis.RegisterYourInterest.Business",
   "shortName": "Beis.RegisterYourInterest.Business",

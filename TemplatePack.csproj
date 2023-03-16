@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageType>Template</PackageType>
+		<PackageVersion>1.0</PackageVersion>
+		<PackageId>Beis.RegisterYourInterest.Business</PackageId>
+		<Title>Beis REgister Your Interest Business Template.</Title>
+		<Authors>BEIS</Authors>
+		<Description>Beis REgister Your Interest Business Template.</Description>
+		<PackageTags>dotnet-new;templates;beis</PackageTags>
+
+		<TargetFramework>netstandard2.0</TargetFramework>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<Content Include="Beis.RegisterYourInterest\**\*" Exclude="Beis.RegisterYourInterest\**\bin\**;Beis.RegisterYourInterest\**\obj\**" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
+</Project>
