@@ -23,14 +23,14 @@ namespace Beis.RegisterYourInterest.Data.Repositories
         {
             var applicant = new Applicant
             {
-                ApplicantName = dto.ApplicantName,
-                ApplicantPhoneNumber = dto.ApplicantPhoneNumber,
-                ApplicantRole = dto.ApplicantRole,
-                CompaniesHouseNumber = dto.CompaniesHouseNumber,
+                full_name = dto.ApplicantName,
+                applicant_phone_number = dto.ApplicantPhoneNumber,
+                applicant_role = dto.ApplicantRole,
+                companies_house_number = dto.CompaniesHouseNumber,
                 email_address = dto.ApplicantEmailAddress,
-                FCAFullRegistrationNumber = dto.FCAFullRegistrationNumber,
-                HasCompaniesHouseNumber = dto.HasCompaniesHouseNumber,
-                HasFcaNumber = dto.HasFcaNumber,
+                fca_full_registration_number = dto.FCAFullRegistrationNumber,
+                has_companies_house_number = dto.HasCompaniesHouseNumber,
+                has_fca_number = dto.HasFcaNumber,
             };
             return await base.CreateAsync(applicant);
         }

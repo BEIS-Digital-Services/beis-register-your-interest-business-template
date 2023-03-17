@@ -41,6 +41,10 @@ namespace Beis.RegisterYourInterest.Migrations
                     b.Property<DateTime?>("email_verified")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("full_name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<Guid?>("verification_code")
                         .HasColumnType("uuid");
 
@@ -205,29 +209,25 @@ namespace Beis.RegisterYourInterest.Migrations
                 {
                     b.HasBaseType("Beis.Common.Entities.Models.BaseUserEntity");
 
-                    b.Property<string>("ApplicantName")
+                    b.Property<string>("applicant_phone_number")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ApplicantPhoneNumber")
+                    b.Property<string>("applicant_role")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ApplicantRole")
+                    b.Property<string>("companies_house_number")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CompaniesHouseNumber")
-                        .IsRequired()
+                    b.Property<string>("fca_full_registration_number")
                         .HasColumnType("text");
 
-                    b.Property<string>("FCAFullRegistrationNumber")
-                        .HasColumnType("text");
-
-                    b.Property<bool?>("HasCompaniesHouseNumber")
+                    b.Property<bool?>("has_companies_house_number")
                         .HasColumnType("boolean");
 
-                    b.Property<bool?>("HasFcaNumber")
+                    b.Property<bool?>("has_fca_number")
                         .HasColumnType("boolean");
 
                     b.HasDiscriminator().HasValue("Applicant");
